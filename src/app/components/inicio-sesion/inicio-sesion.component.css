@@ -1,0 +1,85 @@
+.contenedor-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.img-login{
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.formulario{
+    width: 100%;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding-left: 50px;
+}
+
+.formulario input, .formulario button{
+    width: 280px;
+    margin-bottom: 15px;
+    border-color: #688E26;
+}
+
+.form-label{
+    font-size: 22px;
+    font-weight: bold;
+    color: #688E26;
+    margin-bottom: 5px;
+}
+
+.btn-success{
+    background-color: #688E26;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.acciones{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.acciones p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FAA613;
+}
+
+.mr{
+    margin-right: 50px;
+}
+
+.derechos img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    
+}
+
+.derechos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #688E26;
+    
+}

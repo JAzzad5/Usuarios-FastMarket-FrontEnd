@@ -8,13 +8,21 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 import { ContenedorCategoriasComponent } from './components/contenedor-categorias/contenedor-categorias.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContenedorComerciosComponent } from './components/contenedor-comercios/contenedor-comercios.component';
+import { ProductosComercioComponent } from './components/productos-comercio/productos-comercio.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarraSuperiorComponent,
     BuscarComponent,
-    ContenedorCategoriasComponent
+    ContenedorCategoriasComponent,
+    ContenedorComerciosComponent,
+    ProductosComercioComponent,
+    RegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
