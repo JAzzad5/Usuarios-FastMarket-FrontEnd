@@ -1,0 +1,18 @@
+.saludo{
+    margin-left: 30px;
+    color: white;
+    font-size: 22px;
+ }
+
+.contenedor-buscar{
+    margin-top: -10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn-buscar{
+    background-color: white;
+    border: none;
+    margin-left: 5px;
+    color: #688E26;
+}

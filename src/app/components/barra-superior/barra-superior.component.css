@@ -1,0 +1,17 @@
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.icono{
+    color: white;
+    margin-right: 20px;
+    font-size: 25px;
+}
+.icono-usuario{
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 0px;
+}
