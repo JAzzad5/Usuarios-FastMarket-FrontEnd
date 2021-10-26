@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-productos-comercio',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos-comercio.component.css']
 })
 export class ProductosComercioComponent implements OnInit {
-
+  faArrowLeft=faArrowLeft;
   constructor() { }
 
   ngOnInit(): void {

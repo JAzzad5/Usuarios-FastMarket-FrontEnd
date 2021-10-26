@@ -1,7 +1,12 @@
 <div class="contenedor-vistas">
     <div class="contenedor-comercios">
         <div class="area-comercios">
-            <div class="titulo"> <fa-icon [icon]="faArrowLeft"></fa-icon>  Restaurantes:</div>
+            <div class="titulo"> 
+                <p>
+                    <fa-icon [routerLink]="['/categorias']" routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon>
+                    Restaurantes:
+                </p>
+            </div>
             <div class="comercios row">
                 <div class="comercio">
                     <img class="img-comercio" src="../../../assets/images/bk.jpg" alt="Restaurantes">

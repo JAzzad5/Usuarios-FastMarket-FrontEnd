@@ -13,9 +13,36 @@
     </button>
     </div>
     <div class="modal-body">
-
+        <div class="contenedor-carrito">
+            <div class="producto shadow">
+                <img class="img-producto" src="../../../assets/images/productos/whopper.jpg" alt="Restaurantes">
+                <div class="datos-producto">
+                    <div class="comercio"> Burger King</div>
+                    <div class="direccion"> Blvd Suyapa, frente a UNAH.</div>
+                    <div class="sub-contenedor">
+                        <div class="cantidad rounded rounded-circle" >2</div>
+                        <div class="nombre-producto"> Whopper</div>
+                        <div class="precio"> L. 185</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
     </div>
-    <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    <div class="modal-footer container ">
+        <div class="totales row ">
+            <div class="subtotales col-6">
+                <div class="form-label">Subtotal:</div>
+                <p>L. 720 </p>
+                <div class="form-label">Envío</div>
+                <p>L. 35 </p>
+            </div>
+            <div class="total col-6">
+                <div class="form-label">Total Pagar</div>
+                <p>L. 755 </p>
+            </div>
+        </div>
+    <button type="button" class="btn btn-success col-12" (click)="modal.close('Save click')">Procesar mi Orden</button>
     </div>
 </ng-template>

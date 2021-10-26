@@ -15,3 +15,135 @@
     margin-left: 30px;
     margin-right: 0px;
 }
+
+
+
+.producto{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    align-items: center;
+    box-sizing:border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.img-producto{
+    width: 70px;
+    max-width: 70px;
+    height: 70px;
+    max-height: 70px;
+    object-fit: cover;
+    margin-right: 5px;
+    border-radius: 10px;
+    
+}
+
+.datos-producto{
+    width: 150px;
+    height: 45px;
+    color: #688E26;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+    padding-top: 10px;
+
+}
+
+.datos-producto p{
+    font-size: 12px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+
+.datos-producto .nombre-producto{
+    font-size: 15px;
+    margin-left: 15px;
+
+}
+
+.datos-producto  .precio{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.datos-producto  .comercio{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FAA613;
+}
+
+.datos-producto .direccion{
+    font-size: 12px;
+}
+
+.datos-producto .sub-contenedor{
+    display: flex;
+    align-items: center;
+}
+
+.cantidad {
+    color: #FAA613;
+}
+
+.modal-title{
+    color: #FAA613;
+}
+
+.modal-footer{
+    justify-content:center;
+    width: 100%!important;
+}
+.totales{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #688E26;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.totales .form-label{
+    color: #FAA613;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.totales p{
+    color: #688E26;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.subtotales{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.btn-success{
+    width: 100%;
+    background-color: #688E26;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    border-color: none;
+}
