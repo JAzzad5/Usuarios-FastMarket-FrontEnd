@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser, faMapMarkerAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-barra-superior',
@@ -12,9 +13,18 @@ export class BarraSuperiorComponent implements OnInit {
   faShoppingCart = faShoppingCart;
 
 
-  constructor() { }
+  constructor(private modalService:NgbModal) { }
 
   ngOnInit(): void {
   }
 
+  abrirCarrito(modal:any){
+    this.modalService.open(
+      modal,
+      {
+        size:'s',
+        centered:true
+      }
+    );
+  }
 }

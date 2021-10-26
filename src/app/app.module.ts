@@ -12,6 +12,11 @@ import { ContenedorComerciosComponent } from './components/contenedor-comercios/
 import { ProductosComercioComponent } from './components/productos-comercio/productos-comercio.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { ComerciosComponent } from './components/comercios/comercios.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
     ContenedorComerciosComponent,
     ProductosComercioComponent,
     RegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    CategoriasComponent,
+    ComerciosComponent,
+    ProductosComponent,
+    PerfilComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

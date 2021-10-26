@@ -1,0 +1,89 @@
+.contenedor-registro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.registrate{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    
+}
+
+.registrate img{
+    width: 60px;
+    height: 60px;
+    
+}
+
+.registrate h3{
+    color: #688E26;
+    font-size: 35px;
+    margin-left: 30px;
+    margin-bottom: 0px!important;
+}
+
+.formulario-registro input{
+    width: 280px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.form-label{
+    color: #688E26;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.btn-success{
+    background-color: #688E26;
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.redes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #688E26;
+    font-size: 15px;
+}
+
+.iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.Facebook{
+    color: #149EF9;
+    margin-right: 20px;
+}
+.Google{
+    color: #D93126;
+    margin-right: 20px;
+}
+.Apple{
+    color: #000000;
+}
+
+.input-group-text {
+    width: 38px;
+    height: 38px;
+}

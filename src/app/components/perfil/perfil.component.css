@@ -1,0 +1,77 @@
+.contenedor-perfil{
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+
+}
+.datos-principales{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.datos-principales img{
+    height: 105px;
+    width: 105px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.datos{
+    flex:1;
+    margin-left: 20px;
+    color: #688E26;
+}
+
+.datos .nombre-completo{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.datos .numero, .correo{
+    font-size: 12px;
+    font-weight: bold;
+}
+.datos-generales, .ajustes{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #688E26;
+    font-weight: 500;
+}
+
+.form-label{
+    margin-bottom: 10px;
+}
+
+.btn{
+    margin-bottom: 10px;
+}
+
+.btn-editar{
+    background-color: #FAA613;
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    padding: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn-ubicacion, .btn-contraseña{
+    border-color: #688E26;
+    color: #688E26;
+}
+
+.btn-tarjeta{
+    border-color: #FAA613;
+    color: #FAA613;
+}
+

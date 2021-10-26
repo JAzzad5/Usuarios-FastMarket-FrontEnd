@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faFacebook, faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-registro',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
+  faFacebook = faFacebook;
+  faGoogle = faGoogle;
+  faApple = faApple;
   constructor() { }
 
   ngOnInit(): void {
