@@ -25,8 +25,10 @@
             <input class="form-control" placeholder="8 caracteres mínimo" type="password" name="" id="">
         </div>
         <button class="btn btn-success" type="button"> Registrarme</button>
+        
         <div class="redes">
-            O Inicia Sesión con una red social
+            <a [routerLink]="['/inicioSesion']" routerLinkActive="router-link-active" >*Ya cuento con una cuenta activa</a>
+            O Regístrate con una red social
             <div class="iconos">
                 <fa-icon class="Facebook" [icon]="faFacebook" ></fa-icon>
                 <fa-icon class="Google" [icon]="faGoogle" ></fa-icon>

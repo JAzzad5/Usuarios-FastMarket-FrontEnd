@@ -63,6 +63,14 @@
     font-size: 15px;
 }
 
+.redes a{
+    color: #FAA613;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
 .iconos{
     display: flex;
     justify-content: center;

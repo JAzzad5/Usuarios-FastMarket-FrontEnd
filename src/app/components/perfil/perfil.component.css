@@ -5,19 +5,28 @@
     padding: 20px;
 
 }
+
+.titulo{
+    color: #FAA613;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
 .datos-principales{
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
+    padding-left: 15px;
     margin-bottom: 15px;
 }
 
 .datos-principales img{
-    height: 105px;
-    width: 105px;
+    height: 90px;
+    width: 90px;
     object-fit: cover;
     object-position: top;
 }
@@ -42,9 +51,15 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #688E26;
     font-weight: 500;
+}
+.datos-generales p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FAA613;
 }
 
 .form-label{
