@@ -1,3 +1,4 @@
+import { expressionType } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent implements OnInit {
+  categorias:any = []
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

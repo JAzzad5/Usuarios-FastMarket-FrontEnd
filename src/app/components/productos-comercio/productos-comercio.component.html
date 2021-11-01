@@ -2,44 +2,21 @@
     <div class="contenedor-productos">
         <div class="area-banner" style="background-image: url('../../../assets/images/bk-background.jpg');">
             <div class="titulo"> 
-                <p> <fa-icon [routerLink]="['/comercios']" routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon> Burger King</p>
+                <p> <fa-icon routerLink=".." routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon> {{nombreComercio}}</p>
             </div>
         </div>
         <div class="area-productos">
             <div class="productos row">
-                <div class="producto shadow">
+                <div class="producto shadow" *ngFor="let producto of productos">
                     <div class="datos-producto">
-                        <div class="nombre"> Whopper
-                            <div class="calificacion"> 4.8  </div>
-                        </div> 
-                        <div class="descripcion">1/4 de libra de sabrosa carne a la parrilla.</div>
-                        <div class="precio"> L. 185
+                        <div class="nombre"> {{producto.NombreProducto}}</div> 
+                        <div class="descripcion">{{producto.Descripcion}}.</div>
+                        <div class="precio"> L. {{producto.Precio}}
                         </div>
                     </div>
-                    <img class="img-producto" src="../../../assets/images/productos/whopper.jpg" alt="Restaurantes">
+                    <img class="img-producto" src="../../../assets/images/productos/{{producto.ImagenProducto}}" alt="Restaurantes">
                 </div>
-                <div class="producto shadow">
-                    <div class="datos-producto">
-                        <div class="nombre"> Whopper
-                            <div class="calificacion"> 4.8  </div>
-                        </div> 
-                        <div class="descripcion">1/4 de libra de sabrosa carne a la parrilla.</div>
-                        <div class="precio"> L. 185
-                        </div>
-                    </div>
-                    <img class="img-producto" src="../../../assets/images/productos/whopper.jpg" alt="Restaurantes">
-                </div>
-                <div class="producto shadow">
-                    <div class="datos-producto">
-                        <div class="nombre"> Whopper
-                            <div class="calificacion"> 4.8  </div>
-                        </div> 
-                        <div class="descripcion">1/4 de libra de sabrosa carne a la parrilla.</div>
-                        <div class="precio"> L. 185
-                        </div>
-                    </div>
-                    <img class="img-producto" src="../../../assets/images/productos/whopper.jpg" alt="Restaurantes">
-                </div>
+                
             </div>
         </div>
     </div>

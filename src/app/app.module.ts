@@ -17,6 +17,7 @@ import { ComerciosComponent } from './components/comercios/comercios.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
