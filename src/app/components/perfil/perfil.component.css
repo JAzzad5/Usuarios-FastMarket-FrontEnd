@@ -25,8 +25,8 @@
 }
 
 .datos-principales img{
-    height: 90px;
-    width: 90px;
+    height: 100px;
+    width: 100px;
     object-fit: cover;
     object-position: top;
 }
@@ -51,13 +51,18 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #688E26;
     font-weight: 500;
 }
-.datos-generales p {
+
+.ajustes{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.datos-generales p, .ajustes p {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: #FAA613;
 }
@@ -80,13 +85,19 @@
     padding-right: 15px;
 }
 
+
 .btn-ubicacion, .btn-contraseña{
+    margin-top: 5px;
     border-color: #688E26;
     color: #688E26;
 }
 
 .btn-tarjeta{
+    margin-top: 10px;
     border-color: #FAA613;
     color: #FAA613;
 }
 
+.form-label{
+    margin-bottom: 10px;
+}

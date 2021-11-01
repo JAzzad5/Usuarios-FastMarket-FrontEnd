@@ -4,33 +4,31 @@
         Mi Perfil
     </div>
     <div class="datos-principales">
-        <img class="rounded rounded-circle" src="../../../assets/images/fotos perfil/user 1.jfif" alt="">
+        <img class="rounded rounded-circle" src="../../../assets/images/fotos perfil/{{Usuario.ImagenUsuario}}" alt="">
         <div class="datos">
-            <div class="nombre-completo">Jossué Azzad</div>
-            <div class="numero"> +504 (8899-4455)</div>
-            <div class="correo">jossue@gmail.com</div>
+            <div class="nombre-completo">{{Usuario.NombreUsuario}}</div>
+            <div class="numero"> {{Usuario.Telefono}}</div>
+            <div class="correo">{{Usuario.Correo}}</div>
             <button class="btn btn-editar mt-3" disabled>Editar</button>
         </div>
     </div>
     <div class="datos-generales">
         <p >Mis Datos:</p>
-        <div class="form-label">Nombre:  
-            <input class="form-control" placeholder="Jossué" type="text">
-        </div>
-        <div class="form-label">Apellido 
-            <input class="form-control" placeholder="Azzad" type="text">
+        <div class="form-label">Nombre Completo:  
+            <input class="form-control" placeholder={{Usuario.NombreUsuario}} type="text">
         </div>
         <div class="form-label">Correo:
-            <input class="form-control" placeholder="josue@gmail.com" type="email">
+            <input class="form-control" placeholder={{Usuario.Correo}} type="email">
         </div>
         <div class="form-label">Teléfono:
-            <input class="form-control" placeholder="+504 (88994455)" type="tel">
+            <input class="form-control" placeholder={{Usuario.Telefono}} type="tel">
         </div>
-        <button class="btn btn-ubicacion">Ubicación: Tegucigalpa, Honduras</button>
-        <button class="btn btn-tarjeta">Tarjeta: Visa *** 4477 </button>
+        <button class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
+        <button class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
     </div>
     <div class="ajustes">
+        <p >Acciones:</p>
         <button class="btn btn-contraseña">Cambiar Contraseña</button>
-        <button class="btn btn-danger">Cerrar Sesión</button>
+        <button [routerLink]="['/inicio-sesion']" routerLinkActive="router-link-active"  class="btn btn-danger">Cerrar Sesión</button>
     </div>
 </div>

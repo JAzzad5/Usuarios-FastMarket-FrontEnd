@@ -10,7 +10,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
-  {path: 'inicioSesion', component: InicioSesionComponent},
+  {path: 'inicio-sesion', component: InicioSesionComponent},
   {path: 'registro', component:RegistroComponent},
   {path: 'categorias', component:CategoriasComponent},
   {path: 'comercios', component:ComerciosComponent},

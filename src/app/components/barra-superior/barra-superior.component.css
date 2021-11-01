@@ -11,12 +11,20 @@
     font-size: 25px;
 }
 .icono-usuario{
+    display: flex;
     flex: 1;
+    flex-direction: row;
+    align-items: center;
     margin-left: 30px;
     margin-right: 0px;
 }
 
-
+.icono-usuario p{
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
 
 .producto{
     width: 100px;
@@ -69,6 +77,7 @@
 .datos-producto .nombre-producto{
     font-size: 15px;
     margin-left: 15px;
+    flex: 1;
 
 }
 
@@ -76,6 +85,7 @@
     font-size: 17px;
     font-weight: bold;
     margin-left: 20px;
+    min-width: 50px;
 }
 .datos-producto  .comercio{
     font-size: 20px;

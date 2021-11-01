@@ -1,5 +1,8 @@
 <div class="nav">
-    <fa-icon class="icono icono-usuario" [routerLink]="['/perfil']" routerLinkActive="router-link-active"   [icon]="faUser"></fa-icon>
+    <div class="icono-usuario">
+        <fa-icon class="icono " [routerLink]="['/perfil']" routerLinkActive="router-link-active"   [icon]="faUser"></fa-icon>
+        <p>{{NombreUsuario}}</p>
+    </div>
     <fa-icon class="icono"  [icon]="faMapMarkerAlt"></fa-icon>
     <fa-icon class="icono" (click)="abrirCarrito(modalCarrito)" [icon]="faShoppingCart"></fa-icon>
 </div>
@@ -14,15 +17,14 @@
     </div>
     <div class="modal-body">
         <div class="contenedor-carrito">
-            <div class="producto shadow">
-                <img class="img-producto" src="../../../assets/images/productos/whopper.jpg" alt="Restaurantes">
+            <div class="producto shadow" *ngFor="let producto of CarritoUsuario">
+                <img class="img-producto" src="../../../assets/images/productos/{{producto.ImagenProducto}}" alt="Restaurantes">
                 <div class="datos-producto">
                     <div class="comercio"> Burger King</div>
-                    <div class="direccion"> Blvd Suyapa, frente a UNAH.</div>
                     <div class="sub-contenedor">
-                        <div class="cantidad rounded rounded-circle" >2</div>
-                        <div class="nombre-producto"> Whopper</div>
-                        <div class="precio"> L. 185</div>
+                        <div class="cantidad rounded rounded-circle" >{{producto.Cantidad}}</div>
+                        <div class="nombre-producto"> {{producto.Producto}}</div>
+                        <div class="precio"> L. {{producto.Subtotal / producto.Cantidad}}</div>
                     </div>
                     
                 </div>
