@@ -11,7 +11,7 @@
             <p class="form-label" >Contraseña:</p>
             <input class="form-control" placeholder="contraseña" type="password" name="" id="">
         </div>
-        <button type="button" class="btn btn-success"> Iniciar Session </button>
+        <button [routerLink]="['/categorias']" routerLinkActive="router-link-active"  type="button" class="btn btn-success"> Iniciar Session </button>
         <div class="acciones">
             <p class="mr-4" [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registrate</p>
             <p class="ml-4">Olvidé mi contraseña</p>
