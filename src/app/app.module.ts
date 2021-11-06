@@ -19,6 +19,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     ComerciosComponent,
     ProductosComponent,
     PerfilComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    UbicacionComponent
   ],
   imports: [
     BrowserModule,

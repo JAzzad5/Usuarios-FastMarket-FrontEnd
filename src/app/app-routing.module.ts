@@ -8,6 +8,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ProductosComercioComponent } from './components/productos-comercio/productos-comercio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 
 const routes: Routes = [
   {path: 'inicio-sesion', component: InicioSesionComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'perfil', component:PerfilComponent},
   {path: '', component:LandingPageComponent},
   {path: ':categoria/comercios', component:ComerciosComponent},
-  {path: ':categoria/comercios/:idComercio', component:ProductosComponent}
+  {path: ':categoria/comercios/:idComercio', component:ProductosComponent},
+  {path: 'ubicacion', component:UbicacionComponent}
 ];
 
 @NgModule({
