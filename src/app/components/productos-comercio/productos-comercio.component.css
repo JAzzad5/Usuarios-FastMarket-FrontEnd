@@ -133,3 +133,94 @@
     font-weight: bold;
     margin-top: -5px;
 }
+
+.contenedor-agg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-agg img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.datos .nombre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: bold;
+    color: #688E26;
+}
+
+.datos .descripcion{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    width: 70%;
+    color: #688E26;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+
+}
+
+.datos .contenedor2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.datos .contenedor2 .subtotal, .datos .contenedor2 .cantidad{
+    display: flex;
+    flex-direction: column;
+    color: #688E26;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.subtotal p{
+    color: #FAA613;
+    font-weight: bold;
+}
+
+.cant{
+    text-align: center;
+    border-color: #FAA613;
+    color: #FAA613;
+    font-weight: bold;
+}
+
+.modal-title{
+    color: #FAA613;
+    text-align: center;
+    padding-left: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.modal-header{
+    border-bottom: 0px!important;
+}
+
+.modal-footer button{
+    width: 75%;
+    background-color: #FAA613;
+    border-color: #FAA613;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.modal-footer{
+    justify-content: center!important;
+}

@@ -12,4 +12,9 @@ export class ProductosService {
   obteneProductos(Categoria:any, idComercio:any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/categorias/${Categoria}/${idComercio}/productos`,{});
   }
+
+  obtenerUnProducto(Categoria:any, idComercio:any, idProducto:any):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/categorias/${Categoria}/${idComercio}/${idProducto}`,{});
+  }
+
 }

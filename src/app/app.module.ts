@@ -18,6 +18,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
     
   ],
   providers: [],

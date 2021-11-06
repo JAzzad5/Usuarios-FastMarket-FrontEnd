@@ -7,7 +7,7 @@
         </div>
         <div class="area-productos">
             <div class="productos row">
-                <div class="producto shadow" *ngFor="let producto of productos">
+                <div (click)="open(content,producto._id)" class="producto shadow" *ngFor="let producto of productos">
                     <div class="datos-producto">
                         <div class="nombre"> {{producto.NombreProducto}}</div> 
                         <div class="descripcion">{{producto.Descripcion}}.</div>
@@ -21,3 +21,36 @@
         </div>
     </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{nombreComercio}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="contenedor-agg">
+            <img class="shadow-sm" src="../../../assets/images/productos/{{AggProducto.ImagenProducto}}" alt="">
+            <div class="datos">
+                <div class="nombre"> {{AggProducto.NombreProducto}}
+                    <div class="precio">L. {{AggProducto.Precio}}</div>
+                </div>
+                <div class="descripcion"> {{AggProducto.Descripcion}}</div>
+                <div class="contenedor2">
+                    <div class="cantidad"> Cantidad: 
+                        <input [(ngModel)]="cantidad" class="cant form-control" type="number" min="1" max="5" aria-controls="" id="cantidad">
+                    </div>
+                    <div class="subtotal">
+                        Subtotal:  
+                        <p>L. {{AggProducto.Precio* cantidad}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Añadir al Carrito</button>
+    </div>
+</ng-template>

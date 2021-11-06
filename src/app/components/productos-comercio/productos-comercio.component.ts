@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { ComerciosService } from 'src/app/services/comercios.service';
 import { ProductosService } from 'src/app/services/productos.service';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-productos-comercio',
@@ -10,13 +12,16 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class ProductosComercioComponent implements OnInit {
   faArrowLeft=faArrowLeft;
-  constructor(private productosService:ProductosService, private comerciosService:ComerciosService) { }
+  constructor(private productosService:ProductosService, private comerciosService:ComerciosService, private modalService: NgbModal) { }
 
   productos:any=[];
   categoriaURL:any;
   nombreComercio:any ="";
   Banner:any ="";
   idURL:any;
+  AggProducto:any = {};
+  cantidad:any =1;
+  subtCarrito:any;
   url: any = new URL(window.location.href);
 
   ngOnInit(): void {   
@@ -44,6 +49,26 @@ export class ProductosComercioComponent implements OnInit {
       }
     )
 
+  }
+
+  open(content:any, id:any) {
+    console.log(id);
+    this.productosService.obtenerUnProducto(this.categoriaURL, this.idURL, id).subscribe(
+      res=>{
+        console.log(res);
+        this.AggProducto = res;
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+    this.modalService.open(
+      content,
+      {
+        size:'m',
+        centered:true
+      }
+      );
   }
 
 }
