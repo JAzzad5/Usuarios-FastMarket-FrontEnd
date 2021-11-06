@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  leafletToken:'pk.eyJ1IjoiamFjcTUiLCJhIjoiY2t2bzJveDdmYTFzbDJ4cGd0aGZ4d3RiMiJ9.ylzGbQqPYGcml2B_-RCjbg'
 };
 
 /*

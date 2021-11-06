@@ -3,7 +3,7 @@
         <fa-icon class="icono " [routerLink]="['/perfil']" routerLinkActive="router-link-active"   [icon]="faUser"></fa-icon>
         <p>{{NombreUsuario}}</p>
     </div>
-    <fa-icon class="icono"  [icon]="faMapMarkerAlt"></fa-icon>
+    <fa-icon [routerLink]="['/ubicacion']" routerLinkActive="router-link-active"  class="icono"  [icon]="faMapMarkerAlt"></fa-icon>
     <fa-icon class="icono" (click)="abrirCarrito(modalCarrito)" [icon]="faShoppingCart"></fa-icon>
     <div class="productos-carrito rounded rounded-circle"> {{ProductosCarrito}}</div>
 </div>
