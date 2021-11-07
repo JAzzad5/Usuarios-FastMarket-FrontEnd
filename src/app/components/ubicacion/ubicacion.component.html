@@ -1,6 +1,20 @@
 <div class="fast-market">
     <app-barra-superior style="flex: 1;"></app-barra-superior>
     <div class="contenedor-mapa">
+        <div class="datos">
+            <div class="coord-name">
+                <label>Nombre Dirección: </label>
+                <input [(ngModel)]="direccion" class="form-control" type="text">
+            </div>
+            <div class="coord">
+                <label>Latitud: </label>
+                <input [disabled]="true" [(ngModel)]="lat" class="form-control" type="number">
+            </div>
+            <div  class="coord">
+                <label>Longitud: </label>
+                <input [disabled]="true" [(ngModel)]="lon" class="form-control" type="number">
+            </div>
+        </div>
         <div id="mapa" class="mapa">
             
         </div>

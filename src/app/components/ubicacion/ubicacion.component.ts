@@ -9,8 +9,7 @@ declare const L: any;
 export class UbicacionComponent implements OnInit {
   lat:any="";
   lon:any="";
-  lat2= 14.088317;
-  lon2= -87.230049;
+  direccion:any ="Res. Centroamerica"
   zoom:any = 15;
   mymap:any="";
   marker:any ="";
@@ -23,13 +22,13 @@ export class UbicacionComponent implements OnInit {
         navigator.geolocation.getCurrentPosition((position)=>{
           this.lat = position.coords.latitude;
           this.lon = position.coords.longitude;
+          console.log(position);
           
           console.log(this.lat);
           console.log(this.lon);
 
           this.mymap = L.map('mapa').setView([this.lat, this.lon], this.zoom);
             L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${environment.leafletToken}`, {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
@@ -58,6 +57,8 @@ export class UbicacionComponent implements OnInit {
   aggMarcador(lat:any, long:any){
     this.marker = L.marker([lat,long]).addTo(this.mymap);
     this.marker.bindPopup("<b>Ubicación Actual </b>").openPopup();
+    this.lat = lat;
+    this.lon = long;
   }
 
 }
