@@ -1,22 +1,24 @@
 <div class="fast-market">
     <app-barra-superior style="flex: 1;"></app-barra-superior>
     <div class="contenedor-mapa">
-        <div class="datos">
+        <div class="titulo">
+            <fa-icon [routerLink]="['/categorias']" routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon>
+            Ubicación
+        </div>
+        <div id="mapa" class="mapa shadow"></div>
+        <div class="datos shadow">
             <div class="coord-name">
                 <label>Nombre Dirección: </label>
                 <input [(ngModel)]="direccion" class="form-control" type="text">
             </div>
             <div class="coord">
-                <label>Latitud: </label>
+                <label>Lat: </label> <br>
                 <input [disabled]="true" [(ngModel)]="lat" class="form-control" type="number">
-            </div>
-            <div  class="coord">
-                <label>Longitud: </label>
+                <label>Lng: </label> <br>
                 <input [disabled]="true" [(ngModel)]="lon" class="form-control" type="number">
             </div>
+            <button class="btn "> Guardar Ubicación </button>
         </div>
-        <div id="mapa" class="mapa">
-            
-        </div>
+        
     </div>
 </div>

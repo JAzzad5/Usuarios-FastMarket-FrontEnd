@@ -15,7 +15,7 @@
 .datos{
     width: 90%;
     border-radius: 20px;
-    margin-bottom: 15px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,13 +23,13 @@
     background-color: white;
     padding-top: 15px;
     padding-left: 20px;
-    padding-right: 40px;
+    padding-right: 20px;
 
 }
 .mapa{
     background-color: white;
     width: 90%;
-    height: 75%;
+    height: 60%;
     border-radius: 20px;
 }
 
@@ -62,4 +62,28 @@
     margin-bottom: 15px;
     width: 100%;
     height: 30px;
+    margin-right: 10px;
+}
+
+.btn{
+    background-color: #FAA613;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    width: 80%;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.titulo{
+    color: white;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 20px;
 }

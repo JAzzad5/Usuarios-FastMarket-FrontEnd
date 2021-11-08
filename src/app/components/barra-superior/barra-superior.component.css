@@ -174,3 +174,18 @@
     font-weight: bold;
     font-size: 15px;
 }
+
+.contenedor-ubicacion{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa{
+    background-color: white;
+    width: 95%;
+    height: 100%;
+    border-radius: 20px;
+}

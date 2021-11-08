@@ -8,6 +8,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ProductosComercioComponent } from './components/productos-comercio/productos-comercio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: '', component:LandingPageComponent},
   {path: ':categoria/comercios', component:ComerciosComponent},
   {path: ':categoria/comercios/:idComercio', component:ProductosComponent},
-  {path: 'ubicacion', component:UbicacionComponent}
+  {path: 'ubicacion', component:UbicacionComponent},
+  {path: 'tarjeta', component:TarjetaComponent}
 ];
 
 @NgModule({

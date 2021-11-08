@@ -17,7 +17,7 @@
     </button>
     </div>
     <div class="modal-body">
-        <div class="contenedor-carrito">
+        <div *ngIf="ver == 'carrito'" class="contenedor-carrito">
             <div class="producto shadow" *ngFor="let producto of CarritoUsuario">
                 <img class="img-producto" src="../../../assets/images/productos/{{producto.ImagenProducto}}" alt="Restaurantes">
                 <div class="datos-producto">
@@ -31,6 +31,12 @@
                 </div>
                 
             </div>
+        </div>
+        <div *ngIf="ver == 'ubicacion'" class="contenedor-ubicacion">
+            <div id="mapa" class="mapa shadow"></div>
+        </div>
+        <div *ngIf="ver == 'tarjeta'" class="contenedor-tarjeta">
+
         </div>
     </div>
     <div class="modal-footer container ">
@@ -46,6 +52,7 @@
                 <p>L. 755 </p>
             </div>
         </div>
-    <button type="button" class="btn btn-success col-12" (click)="modal.close('Save click')">Procesar mi Orden</button>
+    <button *ngIf="ver == 'carrito'" type="button" class="btn btn-success col-12" (click)="confirmarUbicacion()">Procesar mi Orden</button>
+    <button *ngIf="ver == 'ubicacion'" type="button" class="btn btn-success col-12" (click)="modal.close('Save click'); verCarrito()">Confirmar Ubicación</button>
     </div>
 </ng-template>

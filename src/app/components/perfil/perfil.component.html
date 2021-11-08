@@ -23,8 +23,8 @@
         <div class="form-label">Teléfono:
             <input class="form-control" placeholder={{Usuario.Telefono}} type="tel">
         </div>
-        <button class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
-        <button class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
+        <button [routerLink]="['/ubicacion']" routerLinkActive="router-link-active"  class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
+        <button [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
     </div>
     <div class="ajustes">
         <p >Acciones:</p>

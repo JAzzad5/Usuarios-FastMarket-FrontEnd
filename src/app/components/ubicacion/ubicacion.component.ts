@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 declare const L: any;
 @Component({
   selector: 'app-ubicacion',
@@ -7,6 +8,7 @@ declare const L: any;
   styleUrls: ['./ubicacion.component.css']
 })
 export class UbicacionComponent implements OnInit {
+  faArrowLeft=faArrowLeft;
   lat:any="";
   lon:any="";
   direccion:any ="Res. Centroamerica"
@@ -60,5 +62,6 @@ export class UbicacionComponent implements OnInit {
     this.lat = lat;
     this.lon = long;
   }
+  
 
 }

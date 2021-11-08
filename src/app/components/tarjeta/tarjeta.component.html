@@ -1,0 +1,32 @@
+<app-barra-superior></app-barra-superior>
+<div class="contenedor-tarjeta">
+    <div class="titulo">
+        <fa-icon [routerLink]="['/categorias']" routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon>
+        Forma de Pago
+    </div>
+    <div class="datos-tarjeta">
+        <div class="frontal">
+            <fa-icon [icon]="faCcMastercard"></fa-icon>
+            <fa-icon [icon]="faCcVisa"></fa-icon>
+            <label>¡Agrega tu Tarjeta! Cuidaremos bien de ella.</label>
+        </div>
+        <div class="datos">
+            <label> Titular de la Tarjeta </label>
+            <input placeholder="Jossue Azzad" class="form-control" type="text">
+            <label> Número de la Tarjeta </label>
+            <input placeholder="1234 5678 9012 3456" class="form-control" type="number">
+            <div class="datos-2">
+                <div>
+                    <label> Fecha de Vencimiento</label>
+                    <input placeholder="12 / 22" class="form-control"  type="number">
+                </div>
+                <div>
+                    <label>CVV</label> 
+                    <input placeholder="123"  class="form-control" type="number">
+                </div>
+                
+            </div>
+        </div>
+        <button class="btn"> Guardar Tarjeta</button>
+    </div>
+</div>
