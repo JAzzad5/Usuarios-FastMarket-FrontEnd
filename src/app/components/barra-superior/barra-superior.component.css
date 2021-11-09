@@ -189,3 +189,22 @@
     height: 100%;
     border-radius: 20px;
 }
+
+.contenedor-tarjeta{
+    padding: 20px;
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.btn-tarjeta{
+    margin-top: 10px;
+    border-color: white;
+    color: white;
+    background-color: #FAA613;
+    width: 80%;
+    letter-spacing: 3px;
+    font-weight: 600;
+}

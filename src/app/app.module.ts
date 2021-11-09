@@ -46,7 +46,7 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     NgbModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
     
     
   ],

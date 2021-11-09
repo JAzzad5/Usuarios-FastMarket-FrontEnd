@@ -36,23 +36,25 @@
             <div id="mapa" class="mapa shadow"></div>
         </div>
         <div *ngIf="ver == 'tarjeta'" class="contenedor-tarjeta">
-
+            <label > Desea continuar con el metodo de pago agregado?: </label>
+            <button [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta" (click)="verTarjeta(); cabiarTarjeta()">Tarjeta: *** {{tarjeta}}</button>
         </div>
     </div>
     <div class="modal-footer container ">
         <div class="totales row ">
             <div class="subtotales col-6">
                 <div class="form-label">Subtotal:</div>
-                <p>L. 720 </p>
+                <p>L. {{subtotal}} </p>
                 <div class="form-label">Envío</div>
-                <p>L. 35 </p>
+                <p>L. {{envio}} </p>
             </div>
             <div class="total col-6">
                 <div class="form-label">Total Pagar</div>
-                <p>L. 755 </p>
+                <p>L. {{total}} </p>
             </div>
         </div>
     <button *ngIf="ver == 'carrito'" type="button" class="btn btn-success col-12" (click)="confirmarUbicacion()">Procesar mi Orden</button>
-    <button *ngIf="ver == 'ubicacion'" type="button" class="btn btn-success col-12" (click)="modal.close('Save click'); verCarrito()">Confirmar Ubicación</button>
+    <button *ngIf="ver == 'ubicacion'" type="button" class="btn btn-success col-12" (click)="verTarjeta()">Confirmar Ubicación</button>
+    <button *ngIf="ver == 'tarjeta'" type="button" class="btn btn-success col-12" (click)="modal.close('Save click'); verCarrito(); sweet()">Finalizar Compra</button>
     </div>
 </ng-template>

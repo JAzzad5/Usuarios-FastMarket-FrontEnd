@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { environment } from 'src/environments/environment';
 declare const L: any;
+declare const Swal: any;
 
 @Component({
   selector: 'app-barra-superior',
@@ -19,6 +20,9 @@ export class BarraSuperiorComponent implements OnInit {
   NombreUsuario:any;
   CarritoUsuario:any;
   ProductosCarrito:any;
+  subtotal:any = 0;
+  envio:any=35;
+  total:any;
   lat:any="";
   lon:any="";
   direccion:any ="Res. Centroamerica"
@@ -26,6 +30,7 @@ export class BarraSuperiorComponent implements OnInit {
   mymap:any="";
   marker:any ="";
   ver:any ="carrito";
+  tarjeta:any = 4567;
   ngOnInit(): void {
     this.usuarioService.obtenerUsuario("61784e12a85334e2f36e9a95").subscribe(
       res=>{
@@ -33,6 +38,7 @@ export class BarraSuperiorComponent implements OnInit {
         this.NombreUsuario = res.NombreUsuario;
         this.CarritoUsuario = res.CarritoCompras;
         this.ProductosCarrito = res.CarritoCompras.length;
+        this.sumaSubtotal();
         console.log("Carrito",this.CarritoUsuario);
       },
       error=>{
@@ -64,10 +70,15 @@ export class BarraSuperiorComponent implements OnInit {
     this.ver ="ubicacion";
     this.verMapa();
   }
-
-  verCarrito(){
-    this.ver ="carrito"
-  }
+  
+  
+    verCarrito(){
+      this.ver ="carrito"
+    }
+    
+    verTarjeta(){
+      this.ver ="tarjeta"
+    }
 
   verMapa(){
     if (navigator.geolocation) {
@@ -93,5 +104,28 @@ export class BarraSuperiorComponent implements OnInit {
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
+  }
+
+  sumaSubtotal(){
+    this.CarritoUsuario.forEach((element:any) => {
+        console.log(element.Subtotal);
+        this.subtotal+=element.Subtotal;
+    });
+    console.log(this.subtotal);
+    this.total = this.subtotal + this.envio;
+  }
+
+  sweet(){
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Orden enviada`,
+      showConfirmButton: false,
+      timer: 2500,
+    });
+  }
+
+  cabiarTarjeta(){
+    this.modalService.dismissAll();
   }
 }
