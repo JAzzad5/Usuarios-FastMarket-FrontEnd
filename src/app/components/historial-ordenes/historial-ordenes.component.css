@@ -1,0 +1,78 @@
+.contenedor-historial{
+    background-color: #f4f4f4;
+    width: 90%;
+    height: 85vh;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.ordenes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.estado-orden{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    
+}
+
+.orden{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.orden img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.datos label{
+    margin-bottom: 0px;
+}
+
+.datos .nombre{
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:#688E26 ;
+}
+
+.datos .fecha{
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.datos .direccion{
+    font-size: 15px;
+    font-weight: 400;
+}

@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { HistorialOrdenesComponent } from './components/historial-ordenes/historial-ordenes.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     PerfilComponent,
     LandingPageComponent,
     UbicacionComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    HistorialOrdenesComponent
   ],
   imports: [
     BrowserModule,
