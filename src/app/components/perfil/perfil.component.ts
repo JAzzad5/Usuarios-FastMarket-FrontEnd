@@ -16,7 +16,6 @@ export class PerfilComponent implements OnInit {
 
     this.usuarioService.obtenerUsuario("61784e12a85334e2f36e9a95").subscribe(
       res=>{
-        console.log(res);
         this.Usuario =res;
         console.log("Usuario",this.Usuario)
       },

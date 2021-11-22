@@ -28,9 +28,9 @@ export class ProductosComercioComponent implements OnInit {
     this.categoriaURL= (this.url.pathname.split('/'))[1];
     this.idURL = (this.url.pathname.split('/'))[3];
 
-    this.productosService.obteneProductos(this.categoriaURL, this.idURL).subscribe(
+    this.productosService.obteneProductos(this.idURL).subscribe(
       res=>{
-        this.productos = res;
+        this.productos = res.Productos;
         console.log(res);
       },
       error=>{
@@ -38,11 +38,12 @@ export class ProductosComercioComponent implements OnInit {
       }
     );
 
-    this.comerciosService.obtenerUnComercio(this.categoriaURL, this.idURL).subscribe(
+    this.comerciosService.obtenerUnComercio(this.idURL).subscribe(
       res=>{
-        let resultado = res;
-        this.nombreComercio = resultado.Comercios[0].NombreComercio;
-        this.Banner = resultado.Comercios[0].BannerComercio;
+
+        console.log(res)
+        this.nombreComercio = res.NombreComercio;
+        this.Banner = res.BannerComercio;
       },
       error=>{
         console.log(error);
@@ -53,7 +54,7 @@ export class ProductosComercioComponent implements OnInit {
 
   open(content:any, id:any) {
     console.log(id);
-    this.productosService.obtenerUnProducto(this.categoriaURL, this.idURL, id).subscribe(
+    this.productosService.obtenerUnProducto(id).subscribe(
       res=>{
         console.log(res);
         this.AggProducto = res;

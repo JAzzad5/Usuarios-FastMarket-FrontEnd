@@ -20,8 +20,8 @@ export class BarraSuperiorComponent implements OnInit {
   NombreUsuario:any;
   CarritoUsuario:any;
   ProductosCarrito:any;
-  subtotal:any = 0;
-  envio:any=35;
+  subtotal:any;
+  envio:any;
   total:any;
   lat:any="";
   lon:any="";
@@ -36,19 +36,29 @@ export class BarraSuperiorComponent implements OnInit {
       res=>{
         console.log(res);
         this.NombreUsuario = res.NombreUsuario;
-        this.CarritoUsuario = res.CarritoCompras;
-        this.ProductosCarrito = res.CarritoCompras.length;
-        this.sumaSubtotal();
-        console.log("Carrito",this.CarritoUsuario);
       },
       error=>{
         console.log(error);
       }
     );
 
+    this.usuarioService.obtenerCarritoUsuario("61784e12a85334e2f36e9a95").subscribe(
+      res=>{
+        console.log("Carrito", res[0].CarritoCompras);
+        this.CarritoUsuario= res[0].CarritoCompras;
+        this.ProductosCarrito= res[0].CarritoCompras.length;
+        this.envio = (res[0].CarritoCompras[0].IdProducto[0].Comercio[0].CostoEnvio);
+      }
+    )
+
   }
 
   abrirCarrito(modal:any){
+    this.CarritoUsuario.forEach((element:any) => {
+      console.log(element)
+      this.subtotal = element.IdProducto[0].Precio * element.Cantidad;
+    });
+    this.total = this.subtotal + this.envio;
     this.modalService.open(
       modal,
       {

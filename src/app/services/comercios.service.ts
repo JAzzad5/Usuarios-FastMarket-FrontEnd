@@ -13,8 +13,8 @@ export class ComerciosService {
     return this.httpClient.get(`http://localhost:8888/categorias/${NombreCategoria}/comercios`,{});
   };
 
-  obtenerUnComercio(NombreCategoria:any, idComercio:any):Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/categorias/${NombreCategoria}/${idComercio}`,{});
+  obtenerUnComercio(idComercio:any):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/comercios/${idComercio}`,{});
   };
   
 }
