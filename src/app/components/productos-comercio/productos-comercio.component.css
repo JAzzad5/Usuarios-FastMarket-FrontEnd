@@ -39,6 +39,7 @@
     padding-left: 20px;
     padding-right:20px;
 }
+
 .titulo{
     font-size: 25px;
     color: black;
@@ -162,6 +163,7 @@
     font-size: 30px;
     font-weight: bold;
     color: #688E26;
+    min-width: 325px ;
 }
 .datos .nombre .precio{
     min-width: 90px;
