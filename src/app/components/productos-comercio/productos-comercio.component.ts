@@ -3,7 +3,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { ComerciosService } from 'src/app/services/comercios.service';
 import { ProductosService } from 'src/app/services/productos.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { UsuariosService } from 'src/app/services/usuarios.service';
+declare const Swal: any;
 
 @Component({
   selector: 'app-productos-comercio',
@@ -12,7 +13,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProductosComercioComponent implements OnInit {
   faArrowLeft=faArrowLeft;
-  constructor(private productosService:ProductosService, private comerciosService:ComerciosService, private modalService: NgbModal) { }
+  constructor(private productosService:ProductosService, private comerciosService:ComerciosService, private usuariosService:UsuariosService, private modalService: NgbModal) { }
 
   productos:any=[];
   categoriaURL:any;
@@ -22,6 +23,7 @@ export class ProductosComercioComponent implements OnInit {
   AggProducto:any = {};
   cantidad:any =1;
   subtCarrito:any;
+  User = "61784e12a85334e2f36e9a95";
   url: any = new URL(window.location.href);
 
   ngOnInit(): void {   
@@ -70,6 +72,31 @@ export class ProductosComercioComponent implements OnInit {
         centered:true
       }
       );
+  }
+
+  agregarAlCarrito(){
+    console.log(this.cantidad);
+    console.log(this.AggProducto._id);
+    let formAñadir = {
+      _id: this.AggProducto._id,
+      Cantidad: this.cantidad
+    }
+    this.usuariosService.añadirAlCarrito(this.User, formAñadir).subscribe(
+      res=>{
+        console.log(res);
+        this.sweet();
+      }
+    );
+  }
+
+  sweet(){
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Producto añadido al carrito`,
+      showConfirmButton: false,
+      timer: 2500,
+    });
   }
 
 }

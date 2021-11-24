@@ -19,13 +19,13 @@
     <div class="modal-body">
         <div *ngIf="ver == 'carrito'" class="contenedor-carrito">
             <div class="producto shadow" *ngFor="let producto of CarritoUsuario">
-                <img class="img-producto" src="../../../assets/images/productos/{{producto.IdProducto[0].ImagenProducto}}" alt="Restaurantes">
+                <img class="img-producto" src="../../../assets/images/productos/{{producto._id.ImagenProducto}}" alt="Restaurantes">
                 <div class="datos-producto">
-                    <div class="comercio"> {{producto.IdProducto[0].Comercio[0].NombreComercio}}</div>
+                    <div class="comercio"> {{producto._id.Comercio[0].NombreComercio}}</div>
                     <div class="sub-contenedor">
                         <div class="cantidad rounded rounded-circle" >{{producto.Cantidad}}</div>
-                        <div class="nombre-producto"> {{producto.IdProducto[0].NombreProducto}}</div>
-                        <div class="precio"> L. {{producto.IdProducto[0].Precio}}</div>
+                        <div class="nombre-producto"> {{producto._id.NombreProducto}}</div>
+                        <div class="precio"> L. {{producto._id.Precio}}</div>
                     </div>
                     
                 </div>

@@ -16,4 +16,8 @@ export class UsuariosService {
   obtenerCarritoUsuario(idUsuario:any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}/carrito`,{});
   }
+
+  añadirAlCarrito(idUsuario:any, formulario:any){
+    return this.httpClient.post(`http://localhost:8888/usuarios/${idUsuario}/agregarProducto`,formulario);
+  }
 }
