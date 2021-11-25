@@ -113,21 +113,21 @@ export class BarraSuperiorComponent implements OnInit {
         coincidencia =0;
         Empresas.forEach((empresa:any) => {
           
-          console.log(empresaActual._id.Comercio[0].NombreComercio + " || " + empresa._id.Comercio[0].NombreComercio);
+          //console.log(empresaActual._id.Comercio[0].NombreComercio + " || " + empresa._id.Comercio[0].NombreComercio);
           if(empresaActual._id.Comercio[0].NombreComercio == empresa._id.Comercio[0].NombreComercio){
             coincidencia = 1
           }
           nuevoEnvio = empresaActual._id.Comercio[0].CostoEnvio
         });
         //si halla una coincidencia no agrega el costo de envio
-        console.log("coincidencia",coincidencia);
+        //console.log("coincidencia",coincidencia);
         if(coincidencia!=1){
           
-          console.log("costoAnterior" , this.envio);
-          console.log("se suma" , nuevoEnvio);
+          //console.log("costoAnterior" , this.envio);
+          //console.log("se suma" , nuevoEnvio);
 
           this.envio += nuevoEnvio;
-          console.log("costo nuevo" , this.envio);
+          //console.log("costo nuevo" , this.envio);
         }
         Empresas.push(element);
         

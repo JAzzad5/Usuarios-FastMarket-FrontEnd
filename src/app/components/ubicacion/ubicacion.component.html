@@ -7,17 +7,19 @@
         </div>
         <div id="mapa" class="mapa shadow"></div>
         <div class="datos shadow">
-            <div class="coord-name">
-                <label>Nombre Dirección: </label>
-                <input [(ngModel)]="direccion" class="form-control" type="text">
-            </div>
-            <div class="coord">
-                <label>Lat: </label> <br>
-                <input [disabled]="true" [(ngModel)]="lat" class="form-control" type="number">
-                <label>Lng: </label> <br>
-                <input [disabled]="true" [(ngModel)]="lon" class="form-control" type="number">
-            </div>
-            <button class="btn "> Guardar Ubicación </button>
+            <form [formGroup]="formularioUbicacion">
+                <div class="coord-name">
+                    <label>Nombre Dirección: </label>
+                    <input formControlName="NombreUbicacion" class="form-control" placeholder="Nombre Usuario" type="text">
+                </div>
+                <div class="coord">
+                    <label>Lat: </label> <br>
+                    <input formControlName="lat" class="form-control" type="number">
+                    <label>Lng: </label> <br>
+                    <input formControlName="lon" class="form-control" type="number">
+                </div>
+            </form>
+            <button (click)="editarUbicacion()" [disabled]="(btnEditar || !formularioUbicacion.valid)" class="btn "> Editar Ubicación </button>
         </div>
         
     </div>

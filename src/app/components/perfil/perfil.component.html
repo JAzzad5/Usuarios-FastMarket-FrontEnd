@@ -4,27 +4,26 @@
         Mi Perfil
     </div>
     <div class="datos-principales">
-        <img class="rounded rounded-circle" src="../../../assets/images/fotos perfil/{{Usuario.ImagenUsuario}}" alt="">
+        <img *ngIf="Usuario.ImagenUsuario != undefined" class="rounded rounded-circle" src="../../../assets/images/fotos perfil/{{Usuario.ImagenUsuario}}" alt="">
         <div class="datos">
             <div class="nombre-completo">{{Usuario.NombreUsuario}}</div>
             <div class="numero"> {{Usuario.Telefono}}</div>
             <div class="correo">{{Usuario.Correo}}</div>
-            <button class="btn btn-editar mt-3" disabled>Editar</button>
+            <button (click)="editarUsuario()" class="btn btn-editar mt-3" [disabled]="(btnEditar || !formularioUsuario.valid)" >Editar</button>
         </div>
     </div>
     <div class="datos-generales">
         <p >Mis Datos:</p>
-        <div class="form-label">Nombre Completo:  
-            <input class="form-control" placeholder={{Usuario.NombreUsuario}} type="text">
-        </div>
-        <div class="form-label">Correo:
-            <input class="form-control" placeholder={{Usuario.Correo}} type="email">
-        </div>
-        <div class="form-label">Teléfono:
-            <input class="form-control" placeholder={{Usuario.Telefono}} type="tel">
-        </div>
-        <button [routerLink]="['/ubicacion']" routerLinkActive="router-link-active"  class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
-        <button [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
+        <form [formGroup]="formularioUsuario">
+            Foto de Perfil: <div class="input-group mb-3">
+                                <input type="file" formControlName="ImagenUsuario" class="form-control" id="foto">
+                            </div>
+            Nombre Completo:  <input formControlName="NombreUsuario" class="form-control mb-1" placeholder="Nombre Usuario" type="text">
+            Correo:<input formControlName="Correo" class="form-control mb-1" placeholder="Correo" type="email">
+            Teléfono:<input  formControlName="Telefono" class="form-control mb-1" placeholder="Número de teléfono" type="tel">
+        </form>
+        <button *ngIf="Usuario.Ubicacion != undefined" [routerLink]="['/ubicacion']" routerLinkActive="router-link-active"  class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
+        <button *ngIf="Usuario.Tarjeta != undefined" [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
     </div>
     <div class="ajustes">
         <p >Acciones:</p>

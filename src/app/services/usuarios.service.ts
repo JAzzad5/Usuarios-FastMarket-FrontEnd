@@ -13,6 +13,14 @@ export class UsuariosService {
     return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}`,{});
   }
 
+  editarUsuario(idUsuario:any, formulario:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${idUsuario}/perfil`,formulario);
+  }
+
+  editarUbicacion(idUsuario:any, formulario:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${idUsuario}/ubicacion`,formulario);
+  }
+
   obtenerCarritoUsuario(idUsuario:any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}/carrito`,{});
   }

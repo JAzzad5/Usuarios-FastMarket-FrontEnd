@@ -19,6 +19,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { HistorialOrdenesComponent } from './components/historial-ordenes/historial-ordenes.component';
@@ -49,6 +50,7 @@ import { HistorialOrdenesComponent } from './components/historial-ordenes/histor
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
     
     
   ],
