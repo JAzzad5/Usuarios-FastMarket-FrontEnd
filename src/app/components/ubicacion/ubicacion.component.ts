@@ -20,7 +20,7 @@ export class UbicacionComponent implements OnInit {
   User="61784e12a85334e2f36e9a95";
 
   formularioUbicacion = new FormGroup({
-    NombreUbicacion:new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    NombreUbicacion:new FormControl('', [Validators.required, Validators.maxLength(40)]),
     lat:new FormControl('', [Validators.required]),
     lon:new FormControl('', [Validators.required])
   });
