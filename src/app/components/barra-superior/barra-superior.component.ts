@@ -20,6 +20,7 @@ export class BarraSuperiorComponent implements OnInit {
   constructor(private modalService:NgbModal, private usuarioService:UsuariosService) { }
   NombreUsuario:any;
   CarritoUsuario:any;
+  Usuario:any
   ProductosCarrito:any;
   User= "61784e12a85334e2f36e9a95"
   subtotal:any=0;
@@ -51,9 +52,9 @@ export class BarraSuperiorComponent implements OnInit {
 
   }
 
-  aggMarcador(lat:any, long:any){
+  aggMarcador(lat:any, long:any, titulo:any){
     this.marker = L.marker([lat,long]).addTo(this.mymap);
-    this.marker.bindPopup("<b>Ubicación Actual </b>").openPopup();
+    this.marker.bindPopup(`<b> ${titulo} </b>`).openPopup();
     this.lat = lat;
     this.lon = long;
   }
@@ -69,16 +70,19 @@ export class BarraSuperiorComponent implements OnInit {
     }
     
     verTarjeta(){
-      this.ver ="tarjeta"
+      if(this.lat=="" && this.lon=="" ){
+        this.alerta();
+      }
+      else{
+        this.ver ="tarjeta"
+      }
     }
 
   verMapa(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position)=>{
-        this.lat = position.coords.latitude;
-        this.lon = position.coords.longitude;
-        console.log(position);
-        
+        this.lat = this.Usuario.Ubicacion.lat;
+        this.lon = this.Usuario.Ubicacion.lon;
         console.log(this.lat);
         console.log(this.lon);
 
@@ -91,7 +95,7 @@ export class BarraSuperiorComponent implements OnInit {
           accessToken: environment.leafletToken
         }).addTo(this.mymap);
 
-        this.aggMarcador(this.lat, this.lon);
+        this.aggMarcador(this.lat, this.lon, this.Usuario.Ubicacion.NombreUbicacion);
       });
     } else {
       console.log("Geolocation is not supported by this browser.");
@@ -148,6 +152,16 @@ export class BarraSuperiorComponent implements OnInit {
     });
   }
 
+  alerta(){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: `Debe añadir una ubicación`,
+      showConfirmButton: false,
+      timer: 2500,
+    });
+  }
+
   cabiarTarjeta(){
     this.modalService.dismissAll();
   }
@@ -158,7 +172,12 @@ export class BarraSuperiorComponent implements OnInit {
         console.log("Carrito", res[0].CarritoCompras);
         this.CarritoUsuario= res[0].CarritoCompras;
         this.ProductosCarrito= res[0].CarritoCompras.length;
-        this.envio = (res[0].CarritoCompras[0]._id.Comercio[0].CostoEnvio);
+        if(res[0].CarritoCompras.length >0){
+          this.envio = (res[0].CarritoCompras[0]._id.Comercio[0].CostoEnvio);
+        }
+        else{
+          this.envio = 0
+        }
         this.sumaSubtotal();
       }
     );
@@ -168,6 +187,7 @@ export class BarraSuperiorComponent implements OnInit {
     this.usuarioService.obtenerUsuario(this.User).subscribe(
       res=>{
         console.log(res);
+        this.Usuario = res;
         this.NombreUsuario = res.NombreUsuario;
       },
       error=>{

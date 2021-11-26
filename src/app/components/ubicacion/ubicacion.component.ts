@@ -17,6 +17,7 @@ export class UbicacionComponent implements OnInit {
   marker:any ="";
   Usuario:any={};
   btnEditar = true;
+  cambiarUbicacion = true;
   User="61784e12a85334e2f36e9a95";
 
   formularioUbicacion = new FormGroup({
@@ -33,17 +34,37 @@ export class UbicacionComponent implements OnInit {
   }
 
   onMapClick(ev:any) {
-    let cambiarUbicación = confirm("Desea cambiar la ubicacion a las siguientes coordenadas coordenadas " + ev.latlng + "?");
-    if(cambiarUbicación){
-      this.mymap.removeLayer(this.marker)
-      this.aggMarcador(ev.latlng.lat, ev.latlng.lng, "nueva ubicacion");
-      this.formularioUbicacion.setValue({
-        NombreUbicacion: this.Usuario.Ubicacion.NombreUbicacion,
-        lat: ev.latlng.lat,
-        lon: ev.latlng.lng
-      });
-      this.btnEditar = false;
-    }
+
+    Swal.fire({
+      title: 'Desea establecer nuevo punto de ubicación?',
+      text: "para confirmar los cambios debes dar click en 'Editar Ubicación'",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, cambiar'
+    }).then((result:any) => {
+      
+      if (result.isConfirmed) {
+        this.cambiarUbicacion = true;
+      }
+      else{
+        this.cambiarUbicacion=false;
+      }
+
+      console.log(this.cambiarUbicacion);
+      if(this.cambiarUbicacion){
+        this.mymap.removeLayer(this.marker)
+        this.aggMarcador(ev.latlng.lat, ev.latlng.lng, "nueva ubicacion");
+        this.formularioUbicacion.setValue({
+          NombreUbicacion: this.Usuario.Ubicacion.NombreUbicacion,
+          lat: ev.latlng.lat,
+          lon: ev.latlng.lng
+        });
+        this.btnEditar = false;
+      }
+    })
+
   }
 
   aggMarcador(lat:any, long:any, msj:any){
