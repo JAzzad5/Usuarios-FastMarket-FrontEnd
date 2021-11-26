@@ -16,7 +16,7 @@ export class PerfilComponent implements OnInit {
   Usuario:any= {};
   formDeValidacion = {};
   btnEditar = true;
-
+  DigitosTarjeta:any;
 
   formularioUsuario = new FormGroup({
     NombreUsuario:new FormControl('', [Validators.required, Validators.maxLength(20)]),
@@ -51,7 +51,9 @@ export class PerfilComponent implements OnInit {
     this.usuarioService.obtenerUsuario(this.User).subscribe(
       res=>{
         this.Usuario =res;
-        console.log("Usuario",this.Usuario)
+        console.log("Usuario",this.Usuario);    
+        let N = this.Usuario.Tarjeta.Numero.toString();
+        this.DigitosTarjeta = N.substr(N.length -4 , N.length -1);
         this.cargarDatos();
       },
       error=>{

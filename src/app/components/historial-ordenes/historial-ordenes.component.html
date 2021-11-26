@@ -1,16 +1,32 @@
 <app-barra-superior></app-barra-superior>
 <div class="contenedor-historial">
-    <div class="estado-orden">
-        <label > Pendientes </label>
-        <label > Entregados</label>
+    <div class="titulo">
+        <fa-icon class="mr-1" [routerLink]="['/categorias']" routerLinkActive="router-link-active"  [icon]="faArrowLeft" ></fa-icon>
+        Historial de Órdenes
     </div>
     <div class="ordenes">
-        <div *ngFor="let orden of ordenes" class=" shadow orden">
-            <img src="../../../assets/images/orden.productos[0]._id[0].Comercio[0].ImagenComercio" alt="">
+        <div *ngFor="let orden of ordenes" class="shadow orden">
             <div class="datos">
-                <label class="nombre"> {{orden.productos[0]._id[0].Comercio[0].NombreComercio}}</label>
-                <label class="fecha"> {{orden.fecha}}</label>
-                <label class="direccion"> {{orden.productos[0]._id[0].Comercio[0].Direccion}} </label>
+                <div class="comercio">
+                    <div class="cabecera">
+                        <div [ngClass]="{'estado-e': orden.estado == 'Entregado', 'estado-p': orden.estado == 'Pendiente'}" class="estado">
+                            <fa-icon style="font-size: 10px; margin-right: 5px;" [icon]="faCircle"></fa-icon>
+                            {{orden.estado}}
+                        </div>
+                        <div class="fecha">{{orden.fecha}}</div>
+                    </div>
+                    <div class="motorista">{{orden.motorista[0].Nombre}}</div>
+                    <div  *ngFor="let producto of orden.productos" class="producto">
+                        <div class="nombreComercio"></div>
+                        <img class="img-producto" src="../../../assets/images/productos/{{producto._id[0].ImagenProducto}}" alt="">
+                        <div class="sub-contenedor">
+                            <div class="cantidad rounded rounded-circle"> Cantidad: {{producto.cantidad}} </div>
+                            <div class="nombre-producto">  {{producto._id[0].NombreProducto}} </div>
+                            <div class="precio">L.{{producto._id[0].Precio}} </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>

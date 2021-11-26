@@ -23,7 +23,7 @@
             Teléfono:<input  formControlName="Telefono" class="form-control mb-1" placeholder="Número de teléfono" type="tel">
         </form>
         <button *ngIf="Usuario.Ubicacion != undefined" [routerLink]="['/ubicacion']" routerLinkActive="router-link-active"  class="btn btn-ubicacion">Ubicación:  {{Usuario.Ubicacion.NombreUbicacion}}</button>
-        <button *ngIf="Usuario.Tarjeta != undefined" [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta">Tarjeta: {{Usuario.Tarjeta.Numero}}</button>
+        <button *ngIf="Usuario.Tarjeta != undefined" [routerLink]="['/tarjeta']" routerLinkActive="router-link-active"  class="btn btn-tarjeta">Tarjeta: **** {{DigitosTarjeta}}</button>
     </div>
     <div class="ajustes">
         <p >Acciones:</p>

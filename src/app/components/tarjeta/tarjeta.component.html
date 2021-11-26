@@ -11,22 +11,24 @@
             <label>¡Agrega tu Tarjeta! Cuidaremos bien de ella.</label>
         </div>
         <div class="datos">
-            <label> Titular de la Tarjeta </label>
-            <input placeholder="Jossue Azzad" class="form-control" type="text">
-            <label> Número de la Tarjeta </label>
-            <input placeholder="1234 5678 9012 3456" class="form-control" type="number">
-            <div class="datos-2">
-                <div>
-                    <label> Fecha de Vencimiento</label>
-                    <input placeholder="12 / 22" class="form-control"  type="number">
+            <form [formGroup]="formularioTarjeta">
+                <label> Titular de la Tarjeta </label>
+                <input formControlName="NombreTarjeta" placeholder="Nombre de la tarjeta" class="form-control" type="text">
+                <label> Número de la Tarjeta </label>
+                <input formControlName="Numero" placeholder="Dígitos de la tarjeta sin espacio" class="form-control" type="number">
+                <div class="datos-2">
+                    <div>
+                        <label> Fecha de Vencimiento</label>
+                        <input formControlName="FechaVencimiento" placeholder="MM/AA" class="form-control"  type="text">
+                    </div>
+                    <div>
+                        <label>CVV</label> 
+                        <input formControlName="CVV" placeholder="123"  class="form-control" type="number">
+                    </div>
+                    
                 </div>
-                <div>
-                    <label>CVV</label> 
-                    <input placeholder="123"  class="form-control" type="number">
-                </div>
-                
-            </div>
+            </form>
         </div>
-        <button class="btn"> Guardar Tarjeta</button>
+        <button [disabled]="(btnEditar || !formularioTarjeta.valid)" (click)="editarTarjeta()" class="btn"> Editar Tarjeta</button>
     </div>
 </div>

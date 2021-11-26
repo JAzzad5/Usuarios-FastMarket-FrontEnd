@@ -1,14 +1,24 @@
 .contenedor-historial{
     background-color: #f4f4f4;
-    width: 90%;
-    height: 85vh;
-    padding: 25px;
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
     margin-top: 20px;
     border-radius: 20px;
+    padding: 20px
+}
+.titulo{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    color: #FAA613;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .ordenes{
@@ -18,14 +28,12 @@
     width: 100%;
 }
 
-.estado-orden{
+.estado{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 2px;
-    
+    align-items: center;
 }
 
 .orden{
@@ -48,13 +56,7 @@
     flex: 1;
 }
 
-.orden img{
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    margin-right: 20px;
-    margin-left: 10px;
-}
+
 
 .datos label{
     margin-bottom: 0px;
@@ -68,11 +70,88 @@
 }
 
 .datos .fecha{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: lighter;
+    color: #688E26;
 }
 
 .datos .direccion{
     font-size: 15px;
     font-weight: 400;
+}
+
+.producto{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    align-items: center;
+    box-sizing:border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.img-producto{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 10px;
+    
+}
+
+
+
+.datos-producto p{
+    font-size: 12px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+
+.datos-producto .nombre-producto{
+    font-size: 15px;
+    margin-left: 15px;
+    flex: 1;
+
+}
+
+.datos-producto  .precio{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 20px;
+    min-width: 50px;
+}
+
+
+.cantidad {
+    color: #FAA613;
+}
+
+.cabecera{
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 30px;
+    align-items: center;
+}
+
+.motorista{
+    padding-left: 10px;
+    margin-bottom: 8px;
+}
+
+.estado-e{
+    color: #28a745;
+}
+
+.estado-p{
+    color: #dc3545;
 }

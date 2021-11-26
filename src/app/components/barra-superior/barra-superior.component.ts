@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faMapMarkerAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faMapMarkerAlt, faShoppingCart, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { environment } from 'src/environments/environment';
@@ -15,6 +15,7 @@ export class BarraSuperiorComponent implements OnInit {
   faUser = faUser;
   faMapMarkerAlt = faMapMarkerAlt;
   faShoppingCart = faShoppingCart;
+  faHistory = faHistory;
   
   constructor(private modalService:NgbModal, private usuarioService:UsuariosService) { }
   NombreUsuario:any;
