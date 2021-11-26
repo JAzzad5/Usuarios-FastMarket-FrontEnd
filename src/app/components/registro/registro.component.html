@@ -4,27 +4,30 @@
         <h3>Regístrate!</h3>
     </div>
     <div class="formulario-registro">
-        <div class="form-label" >
-            Nombre:
-            <input class="form-control" placeholder="Nombre" type="text" name="" id="">
-        </div>
-        <div class="form-label" >
-            Correo:
-            <input class="form-control" placeholder="usuario@correo.com" type="email" name="" id="">
-        </div>
-        <div class="form-label" >
-            Número de Teléfono:
-            <input class="form-control" placeholder="+(504)" type="tel" name="" id="">
-        </div>
-        <div class="form-label" >
-            Contraseña:
-            <input class="form-control" placeholder="8 caracteres mínimo" type="password" name="" id="">
-        </div>
-        <div class="form-label" >
-            Confirmar Contraseña:
-            <input class="form-control" placeholder="8 caracteres mínimo" type="password" name="" id="">
-        </div>
-        <button class="btn btn-success" type="button"> Registrarme</button>
+        <form [formGroup]="formularioRegistro">
+            <div class="form-label" >
+                Nombre:
+                <input formControlName="NombreUsuario" class="form-control" placeholder="Nombre" type="text" name="" id="">
+            </div>
+            <div class="form-label" >
+                Correo:
+                <input formControlName="Correo" class="form-control" placeholder="usuario@correo.com" type="email">
+            </div>
+            <div class="form-label" >
+                Número de Teléfono:
+                <input formControlName="Telefono" class="form-control" placeholder="+504 (Telefono)" type="tel">
+            </div>
+            <div class="form-label" >
+                Contraseña:
+                <input formControlName="Contraseña" class="form-control" placeholder="8 caracteres mínimo" type="password" >
+            </div>
+        </form>
+            <div class="form-label" >
+                Confirmar Contraseña:
+                <input [(ngModel)]="confirmarContra" class="form-control" placeholder="8 caracteres mínimo" type="password" >
+            </div>
+        
+        <button [disabled]="!formularioRegistro.valid" (click)="registrarUsuario()" class="btn btn-success" type="button"> Registrarme</button>
         
         <div class="redes">
             <a [routerLink]="['/inicio-sesion']" routerLinkActive="router-link-active" >*Ya cuento con una cuenta activa</a>

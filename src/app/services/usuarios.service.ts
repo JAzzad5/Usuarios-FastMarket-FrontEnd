@@ -8,6 +8,10 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   constructor(private httpClient:HttpClient) { }
+  
+  añadirUsuario(formulario:any){
+    return this.httpClient.post(`http://localhost:8888/usuarios/nuevo`,formulario);
+  }
 
   obtenerUsuario(idUsuario:any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}`,{});
