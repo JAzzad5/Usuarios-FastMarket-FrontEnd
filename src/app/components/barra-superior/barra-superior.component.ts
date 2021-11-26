@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser, faMapMarkerAlt, faShoppingCart, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OrdenesService } from 'src/app/services/ordenes.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { environment } from 'src/environments/environment';
 declare const L: any;
@@ -17,7 +18,7 @@ export class BarraSuperiorComponent implements OnInit {
   faShoppingCart = faShoppingCart;
   faHistory = faHistory;
   
-  constructor(private modalService:NgbModal, private usuarioService:UsuariosService) { }
+  constructor(private modalService:NgbModal, private ordenesService:OrdenesService, private usuarioService:UsuariosService) { }
   NombreUsuario:any;
   CarritoUsuario:any;
   Usuario:any
@@ -60,8 +61,13 @@ export class BarraSuperiorComponent implements OnInit {
   }
 
   confirmarUbicacion(){
-    this.ver ="ubicacion";
-    this.verMapa();
+    if(this.ProductosCarrito >0){
+      this.ver ="ubicacion";
+      this.verMapa();
+    }
+    else{
+      this.alertaVacio();
+    }
   }
   
   
@@ -162,6 +168,26 @@ export class BarraSuperiorComponent implements OnInit {
     });
   }
 
+  alertaT(){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: `Debe añadir Tarjeta`,
+      showConfirmButton: false,
+      timer: 2500,
+    });
+  }
+
+  alertaVacio(){
+    Swal.fire({
+      position: 'center',
+      icon: 'warning',
+      title: `Debe añadir Productos al Carrito`,
+      showConfirmButton: false,
+      timer: 2500,
+    });
+  }
+
   cabiarTarjeta(){
     this.modalService.dismissAll();
   }
@@ -194,5 +220,43 @@ export class BarraSuperiorComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  finalizarOrden(){
+    if(this.Usuario.Tarjeta.Numero != null){
+      let formOrden = {
+        usuario: this.Usuario._id,
+      }
+      this.ordenesService.añadirOrden(formOrden).subscribe(
+        res=>{
+          console.log(res);
+          console.log(formOrden);
+          this.sweet();
+          this.Usuario.CarritoCompras.forEach((element:any) => {
+            console.log(element);
+            this.ordenesService.añadirProductosOrden(res[0]._id, element).subscribe(
+              res=>{
+                console.log(res);
+              }
+            );
+          });
+          this.usuarioService.añadirAlHistorial(formOrden.usuario, res[0]._id).subscribe(
+            res=>{
+              console.log(res);
+              this.usuarioService.limpiarCarrito(formOrden.usuario).subscribe(
+                res=>{
+                  console.log(res);
+                }
+              );;
+              this.obtenerCarrito();
+            }
+          );
+          
+        }
+      );
+    }
+    else{
+      this.alertaT()
+    }
   }
 }

@@ -36,4 +36,14 @@ export class UsuariosService {
   añadirAlCarrito(idUsuario:any, formulario:any){
     return this.httpClient.post(`http://localhost:8888/usuarios/${idUsuario}/agregarProducto`,formulario);
   }
+
+  limpiarCarrito(idUsuario:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${idUsuario}/limpiarCarrito`,{});
+  }
+
+  añadirAlHistorial(idUsuario:any, idOrden:any){
+    return this.httpClient.post(`http://localhost:8888/usuarios/${idUsuario}/agregarOrdenHistorial/${idOrden}`,{});
+  }
+
+  
 }

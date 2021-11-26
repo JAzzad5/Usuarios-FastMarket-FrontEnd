@@ -15,14 +15,15 @@
                         </div>
                         <div class="fecha">{{orden.fecha}}</div>
                     </div>
-                    <div class="motorista">{{orden.motorista[0].Nombre}}</div>
+                    <div *ngIf="orden.motorista != null" class="motorista">{{orden.motorista[0].Nombre}}</div>
+                    <div *ngIf="orden.motorista == null" class="motorista">Su orden aún no ha sido tomada</div>
                     <div  *ngFor="let producto of orden.productos" class="producto">
                         <div class="nombreComercio"></div>
-                        <img class="img-producto" src="../../../assets/images/productos/{{producto._id[0].ImagenProducto}}" alt="">
+                        <img class="img-producto" src="../../../assets/images/productos/{{producto._id.ImagenProducto}}" alt="">
                         <div class="sub-contenedor">
-                            <div class="cantidad rounded rounded-circle"> Cantidad: {{producto.cantidad}} </div>
-                            <div class="nombre-producto">  {{producto._id[0].NombreProducto}} </div>
-                            <div class="precio">L.{{producto._id[0].Precio}} </div>
+                            <div class="cantidad rounded rounded-circle"> Cantidad: {{producto.Cantidad}} </div>
+                            <div class="nombre-producto">  {{producto._id.NombreProducto}} </div>
+                            <div class="precio">L.{{producto._id.Precio}} </div>
                         </div>
                         
                     </div>

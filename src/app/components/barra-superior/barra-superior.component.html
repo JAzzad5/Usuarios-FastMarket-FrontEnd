@@ -56,6 +56,6 @@
         </div>
     <button *ngIf="ver == 'carrito'" type="button" class="btn btn-success col-12" (click)="confirmarUbicacion()">Procesar mi Orden</button>
     <button *ngIf="ver == 'ubicacion'" type="button" class="btn btn-success col-12" (click)="verTarjeta()">Confirmar Ubicación</button>
-    <button *ngIf="ver == 'tarjeta'" type="button" class="btn btn-success col-12" (click)="modal.close('Save click'); verCarrito(); sweet()">Finalizar Compra</button>
+    <button *ngIf="ver == 'tarjeta'" type="button" class="btn btn-success col-12" (click)="modal.close('Save click'); finalizarOrden()">Finalizar Compra</button>
     </div>
 </ng-template>
