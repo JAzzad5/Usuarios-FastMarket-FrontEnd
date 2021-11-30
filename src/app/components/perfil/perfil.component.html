@@ -28,6 +28,6 @@
     <div class="ajustes">
         <p >Acciones:</p>
         <button class="btn btn-contraseña">Cambiar Contraseña</button>
-        <button [routerLink]="['/inicio-sesion']" routerLinkActive="router-link-active"  class="btn btn-danger">Cerrar Sesión</button>
+        <button (click)="cerrarSesion();" routerLinkActive="router-link-active"  class="btn btn-danger">Cerrar Sesión</button>
     </div>
 </div>

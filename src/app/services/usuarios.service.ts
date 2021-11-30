@@ -49,5 +49,8 @@ export class UsuariosService {
     return this.httpClient.post(`http://localhost:8888/usuarios/${idUsuario}/agregarOrdenHistorial/${idOrden}`,{});
   }
 
+  login(Correo:any):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/usuarios/${Correo}/login`,{});
+  }
   
 }

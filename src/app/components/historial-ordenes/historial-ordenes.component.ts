@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { faCircle, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-historial-ordenes',
@@ -9,9 +10,9 @@ import { faCircle, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class HistorialOrdenesComponent implements OnInit {
 
-  constructor(private usuariosService:UsuariosService) { }
+  constructor(private usuariosService:UsuariosService, private cookieService:CookieService) { }
   ordenes:any;
-  User = '61784e12a85334e2f36e9a95';
+  User = this.cookieService.get('User');
   faCircle=faCircle;
   faArrowLeft=faArrowLeft;
 
@@ -21,7 +22,6 @@ export class HistorialOrdenesComponent implements OnInit {
       res=>{
         console.log(res[0].HistorialOrdenes);
         this.ordenes = res[0].HistorialOrdenes;
-        console.log('productos',res[0].HistorialOrdenes[0].productos[0]._id[0].NombreProducto)
       },
       error=>{
         console.log(error);

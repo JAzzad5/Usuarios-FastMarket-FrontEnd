@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 declare const Swal: any;
 
 @Component({
@@ -10,8 +11,11 @@ declare const Swal: any;
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+
+  constructor(private usuarioService:UsuariosService, private cookieService:CookieService) { }
+
+
   faArrowLeft=faArrowLeft;
-  constructor(private usuarioService:UsuariosService) { }
   User="61784e12a85334e2f36e9a95";
   Usuario:any= {};
   formDeValidacion = {};
@@ -111,5 +115,8 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-  
+  cerrarSesion(){
+    this.cookieService.delete('User');
+    window.location.href = '/inicio-sesion';
+  }
 }
