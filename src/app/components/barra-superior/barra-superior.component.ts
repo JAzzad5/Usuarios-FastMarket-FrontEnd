@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OrdenesService } from 'src/app/services/ordenes.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { environment } from 'src/environments/environment';
+import { CookieService } from 'ngx-cookie-service';
 declare const L: any;
 declare const Swal: any;
 
@@ -18,12 +19,12 @@ export class BarraSuperiorComponent implements OnInit {
   faShoppingCart = faShoppingCart;
   faHistory = faHistory;
   
-  constructor(private modalService:NgbModal, private ordenesService:OrdenesService, private usuarioService:UsuariosService) { }
+  constructor(private modalService:NgbModal, private ordenesService:OrdenesService, private usuarioService:UsuariosService,private cookieService:CookieService) { }
   NombreUsuario:any;
   CarritoUsuario:any;
   Usuario:any
   ProductosCarrito:any;
-  User= "61784e12a85334e2f36e9a95"
+  User= this.cookieService.get('User');
   subtotal:any=0;
   total:any=0;
   envio:any;

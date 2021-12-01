@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { CookieService } from 'ngx-cookie-service';
 declare const Swal: any;
 declare const L: any;
 @Component({
@@ -18,7 +19,7 @@ export class UbicacionComponent implements OnInit {
   Usuario:any={};
   btnEditar = true;
   cambiarUbicacion = true;
-  User="61784e12a85334e2f36e9a95";
+  User=this.cookieService.get('User');
 
   formularioUbicacion = new FormGroup({
     NombreUbicacion:new FormControl('', [Validators.required, Validators.maxLength(40)]),
@@ -26,7 +27,7 @@ export class UbicacionComponent implements OnInit {
     lon:new FormControl('', [Validators.required])
   });
 
-  constructor(private usuariosService:UsuariosService) { }
+  constructor(private usuariosService:UsuariosService, private cookieService:CookieService) { }
 
   ngOnInit(): void {
       this.cargarUsuario();

@@ -3,7 +3,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faCcVisa, faCcMastercard } from '@fortawesome/free-brands-svg-icons';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/template';
+import { CookieService } from 'ngx-cookie-service';
 declare const Swal: any;
 
 @Component({
@@ -15,7 +15,7 @@ export class TarjetaComponent implements OnInit {
   faArrowLeft=faArrowLeft;
   faCcVisa=faCcVisa;
   faCcMastercard=faCcMastercard;
-  User="61784e12a85334e2f36e9a95";
+  User=this.cookieService.get('User');
   Usuario:any= {};
   btnEditar = true;
   formTarjeta:any ={};
@@ -27,7 +27,7 @@ export class TarjetaComponent implements OnInit {
     CVV:new FormControl('', [Validators.required,Validators.min(100), Validators.max(9999)])
   });
 
-  constructor(private usuarioService:UsuariosService) { }
+  constructor(private usuarioService:UsuariosService, private cookieService:CookieService) { }
 
   ngOnInit(): void {
     this.cargarUsuario();

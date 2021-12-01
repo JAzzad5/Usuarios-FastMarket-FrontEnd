@@ -4,6 +4,7 @@ import { ComerciosService } from 'src/app/services/comercios.service';
 import { ProductosService } from 'src/app/services/productos.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { CookieService } from 'ngx-cookie-service';
 declare const Swal: any;
 
 @Component({
@@ -13,7 +14,7 @@ declare const Swal: any;
 })
 export class ProductosComercioComponent implements OnInit {
   faArrowLeft=faArrowLeft;
-  constructor(private productosService:ProductosService, private comerciosService:ComerciosService, private usuariosService:UsuariosService, private modalService: NgbModal) { }
+  constructor(private productosService:ProductosService, private cookieService:CookieService, private comerciosService:ComerciosService, private usuariosService:UsuariosService, private modalService: NgbModal) { }
 
   productos:any=[];
   categoriaURL:any;
@@ -23,7 +24,7 @@ export class ProductosComercioComponent implements OnInit {
   AggProducto:any = {};
   cantidad:any =1;
   subtCarrito:any;
-  User = "61784e12a85334e2f36e9a95";
+  User = this.cookieService.get('User');
   url: any = new URL(window.location.href);
 
   ngOnInit(): void {   

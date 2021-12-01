@@ -16,7 +16,7 @@ export class PerfilComponent implements OnInit {
 
 
   faArrowLeft=faArrowLeft;
-  User="61784e12a85334e2f36e9a95";
+  User= this.cookieService.get('User');
   Usuario:any= {};
   formDeValidacion = {};
   btnEditar = true;
