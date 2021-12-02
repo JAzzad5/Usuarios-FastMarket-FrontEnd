@@ -30,7 +30,6 @@ export class InicioSesionComponent implements OnInit {
         else{
           let pass = res.Contraseña;
           if(pass == this.formularioLogin.value.Contraseña){
-            this.correcto();
             this.cookieService.set('User', res._id, { expires: 10});
             window.location.href = '/categorias';
           }
