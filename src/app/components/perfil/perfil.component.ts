@@ -56,9 +56,14 @@ export class PerfilComponent implements OnInit {
       res=>{
         this.Usuario =res;
         console.log("Usuario",this.Usuario);    
-        let N = this.Usuario.Tarjeta.Numero.toString();
-        this.DigitosTarjeta = N.substr(N.length -4 , N.length -1);
         this.cargarDatos();
+        if(this.Usuario.Tarjeta.Numero != null){
+          let N = this.Usuario.Tarjeta.Numero.toString();
+          this.DigitosTarjeta = N.substr(N.length -4 , N.length -1);
+        }
+        else{
+
+        }
       },
       error=>{
         console.log(error);

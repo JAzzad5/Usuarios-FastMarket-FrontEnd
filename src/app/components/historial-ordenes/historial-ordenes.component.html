@@ -9,7 +9,7 @@
             <div class="datos">
                 <div class="comercio">
                     <div class="cabecera">
-                        <div [ngClass]="{'estado-e': orden.estado == 'Entregado', 'estado-p': orden.estado == 'Pendiente'}" class="estado">
+                        <div [ngClass]="{'estado-e': orden.estado == 'Entregado', 'estado-p': orden.estado == 'Pendiente', 'estado-c': orden.estado == 'En Camino'}" class="estado">
                             <fa-icon style="font-size: 10px; margin-right: 5px;" [icon]="faCircle"></fa-icon>
                             {{orden.estado}}
                         </div>
