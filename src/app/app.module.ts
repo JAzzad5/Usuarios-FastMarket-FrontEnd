@@ -23,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { HistorialOrdenesComponent } from './components/historial-ordenes/historial-ordenes.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,13 @@ import { HistorialOrdenesComponent } from './components/historial-ordenes/histor
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
     
     
   ],
